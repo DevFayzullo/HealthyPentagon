@@ -14,5 +14,3 @@
 	<jsp:include page="views/footer.jsp" />	<!-- 하단 -->
 </body>
 </html>
-
-//ss
