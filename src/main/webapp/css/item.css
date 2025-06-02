@@ -1,0 +1,449 @@
+@charset "UTF-8";
+
+/* 공통 텍스트 스타일 */
+.food_title, .food_subtitle {
+	font-family: 'Noto Sans KR';
+	margin: 0;
+}
+
+/* 제목 영역 */
+.food_title_wrap {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	width: 100%;
+	height: auto;
+	margin-bottom: 20px;
+	margin-top: 60px;
+}
+
+.food_title_wrap .food_title {
+	font-size: 32px;
+	font-weight: 500;
+	font-weight: bold;
+}
+
+.food_title_wrap .food_subtitle {
+	font-size: 21px;
+	color: #888;
+}
+
+/* 홈 상품 섹션 */
+.food_section, .products {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.food_section .food_list {
+	grid-template-columns: repeat(4, 1fr);
+}
+
+/* 상품 리스트 */
+.food_list_wrap {
+	overflow-x: auto;
+	margin-top: 0;
+}
+
+.food_list {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	gap: 20px;
+}
+
+.food_card {
+	width: 100%;
+	height: auto;
+}
+
+.food_link {
+	display: flex;
+	flex-direction: column;
+	text-decoration: none;
+	color: #000;
+}
+
+/* 이미지 박스 */
+.food_thumbnail {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 1/1;
+	background-color: #eaeaea;
+	border-radius: 12px;
+	overflow: hidden;
+}
+
+.food_thumbnail img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.food_bookmark_icon {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	width: 20px;
+	height: 20px;
+}
+
+.food_bookmark_icon img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.food_status_badge {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	font-size: 12px;
+	background-color: rgba(255, 255, 255, 0.7);
+	padding: 2px 6px;
+	border-radius: 4px;
+}
+
+/* 상품 정보 */
+.food_info {
+	margin-top: 10px;
+}
+
+.food_description {
+	font-family: 'Noto Sans KR';
+	font-size: 18px;
+	color: #666;
+	margin: 0;
+}
+
+.food_name {
+	font-size: 21px;
+	font-weight: bold;
+	font-weight: 600;
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+
+.food_kcal {
+	font-size: 21px;
+	font-weight: bold;
+	font-weight: 600;
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+
+.food_tag_container {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 6px;
+	margin-bottom: 6px;
+	gap: 6px;
+}
+
+.food_tag {
+	align-items: center;
+	justify-content: center;
+	display: inline-block;
+	line-height: 20px;
+	font-size: 12px;
+	padding: 2px 6px;
+	background-color: #f2f9f6;
+	color: #31b46e;
+	border-radius: 4px;
+}
+
+/* ----------- */
+.diet_title, .diet_subtitle {
+	font-family: 'Noto Sans KR';
+	margin: 0;
+}
+
+.diet_title_wrap {
+	display: flex;
+	flex-direction: column;
+	align-items: center; /* 좌우 정렬을 중앙으로 */
+	text-align: center;
+	/* 텍스트 자체도 중앙으로 */
+	width: 100%;
+	height: auto;
+	margin-bottom: 20px;
+	margin-top: 60px;
+	text-align: center;
+}
+
+.diet_title_wrap .diet_title {
+	font-size: 32px;
+	font-weight: bold;
+}
+
+.diet_title_wrap .diet_subtitle {
+	font-size: 21px;
+	color: #888;
+}
+
+.diet_section, .products {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.diet_section .diet_list {
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.diet_list_wrap {
+	overflow-x: auto;
+	margin-top: 0;
+}
+
+.diet_list {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	gap: 20px;
+}
+
+.diet_card {
+	width: 100%;
+	height: auto;
+}
+
+.diet_link {
+	display: flex;
+	flex-direction: column;
+	text-decoration: none;
+	color: #000;
+}
+
+.diet_thumbnail {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 1/1;
+	background-color: #eaeaea;
+	border-radius: 12px;
+	overflow: hidden;
+}
+
+.diet_thumbnail img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.diet_info {
+	margin-top: 10px;
+}
+
+.diet_description {
+	font-family: 'Noto Sans KR';
+	font-size: 18px;
+	color: #666;
+	margin: 0;
+}
+
+.diet_name {
+	font-size: 21px;
+	font-weight: 600;
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+
+.diet_kcal {
+	font-size: 21px;
+	font-weight: 600;
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+
+.diet_tag_container {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 6px;
+	margin-bottom: 6px;
+	gap: 6px;
+}
+
+.diet_tag {
+	display: inline-block;
+	line-height: 20px;
+	font-size: 12px;
+	padding: 2px 6px;
+	background-color: #f2f9f6;
+	color: #31b46e;
+	border-radius: 4px;
+}
+
+/* 탭 */
+.diet_tabs {
+	display: flex;
+	justify-content: flex-start;
+	margin-top: 60px;
+	margin-bottom: 20px;
+	gap: 10px;
+}
+
+.diet_tab {
+	padding: 10px 20px;
+	background-color: #eee;
+	border-radius: 30px;
+	cursor: pointer;
+	font-weight: bold;
+	transition: 0.3s;
+}
+
+.diet_tab.active {
+	background-color: #5fc48e;
+	color: white;
+}
+
+.diet_list_wrap {
+	display: none;
+}
+
+.diet_list_wrap.active {
+	display: block;
+}
+
+/* 식단관리 */
+.dietmgmt_title, .dietmgmt_subtitle {
+	font-family: 'Noto Sans KR';
+	margin: 0;
+}
+
+.dietmgmt_title_wrap {
+	display: flex;
+	flex-direction: column;
+	align-items: center; /* 좌우 정렬을 중앙으로 */
+	text-align: center; /* 텍스트 자체도 중앙으로 */
+	width: 100%;
+	height: auto;
+	margin-bottom: 20px;
+	margin-top: 60px;
+	text-align: center;
+}
+
+.dietmgmt_title_wrap .dietmgmt_title {
+	font-size: 32px;
+	font-weight: bold;
+}
+
+.dietmgmt_title_wrap .dietmgmt_subtitle {
+	font-size: 21px;
+	color: #888;
+}
+
+.dietmgmt_section, .dietmgmt_products {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.dietmgmt_section .dietmgmt_list {
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.dietmgmt_list_wrap {
+	overflow-x: auto;
+	margin-top: 0;
+}
+
+.dietmgmt_list {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	gap: 20px;
+}
+
+.dietmgmt_card {
+	width: 100%;
+	height: auto;
+}
+
+.dietmgmt_link {
+	display: flex;
+	flex-direction: column;
+	text-decoration: none;
+	color: #000;
+}
+
+.dietmgmt_thumbnail {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 1/1;
+	background-color: #eaeaea;
+	border-radius: 12px;
+	overflow: hidden;
+}
+
+.dietmgmt_thumbnail img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.dietmgmt_info {
+	margin-top: 10px;
+}
+
+.dietmgmt_description {
+	font-family: 'Noto Sans KR';
+	font-size: 18px;
+	color: #666;
+	margin: 0;
+}
+
+.dietmgmt_name {
+	font-size: 21px;
+	font-weight: 600;
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+
+.dietmgmt_kcal {
+	font-size: 21px;
+	font-weight: 600;
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+
+.dietmgmt_tag_container {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 6px;
+	margin-bottom: 6px;
+	gap: 6px;
+}
+
+.dietmgmt_tag {
+	display: inline-block;
+	line-height: 20px;
+	font-size: 12px;
+	padding: 2px 6px;
+	background-color: #f2f9f6;
+	color: #31b46e;
+	border-radius: 4px;
+}
+
+/* 스토어 */
+.store_banner {
+	width: 100%;
+	max-height: 400px; overflow : hidden;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.store_banner img {
+	width: 100%;
+	height: auto; /* ← 비율 유지 */ 
+	display : block;
+	object-fit: cover;
+	border-radius: 12px;
+	display: block;
+}
+
+.store_banner img:hover {
+	
+}

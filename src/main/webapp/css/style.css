@@ -1,0 +1,192 @@
+@charset "UTF-8";
+
+/* 전체 공통 초기화 */
+* {
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+body {
+	margin: 0;
+	padding-top: 100px; /* 고정 헤더 높이만큼 공간 확보 */
+	font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+	font-size: 18px;
+	line-height: 1.5;
+	color: #333;
+	overflow-x: hidden;
+}
+
+/* 고정 헤더 */
+.main-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100px;
+	width: 100%;
+	background: #fff;
+	z-index: 999;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* 헤더 내부 */
+.header-inner {
+	max-width: 1200px;
+	height: 100%;
+	margin: 0 auto;
+	position: relative;
+}
+
+.logo {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.logo img {
+	height: 30px;
+	width: 150px;
+}
+
+.main-nav {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.main-nav ul {
+	display: flex;
+	gap: 30px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.main-nav a {
+	text-decoration: none;
+	color: #333;
+	font-weight: bold;
+	transition: color 0.3s;
+}
+
+.main-nav a:hover {
+	color: #c8102e;
+}
+
+/* 슬라이더 바깥 래퍼 */
+.main-slider {
+	width: 100%;
+	margin: 0 0 40px 0; /* 상단 여백 제거하고 아래만 여백 */
+	box-sizing: border-box;
+	padding: 0;
+}
+
+/* 슬라이드 개별 스타일 */
+.main-slider .slick-slide {
+	opacity: 1; /* 전체 슬라이드 투명도 1로 */
+	transition: opacity 0.3s ease;
+	padding: 0 10px;
+}
+
+.main-slider .slick-center {
+	opacity: 1 !important;
+}
+
+.main-slider img {
+	width: 100%;
+	border-radius: 8px;
+	cursor: pointer;
+	display: block;
+}
+
+/* Slick 커스텀 화살표 및 점 */
+.slick-prev, .slick-next {
+	z-index: 998; /* 헤더보다 작게 */
+	top: 50% !important;
+	transform: translate(0, -50%) !important;
+	width: 50px !important; /* 버튼 크기 지정 */
+	height: 50px !important;
+	line-height: 50px !important; /* 세로 가운데 정렬 */
+	margin-left: 200px;
+	margin-right: 200px;
+}
+
+.slick-prev {
+	left: 10px !important;
+}
+
+.slick-next {
+	right: 10px !important;
+}
+
+.slick-prev:before, .slick-next:before {
+	color: #333 !important;
+	font-size: 55px !important; /* 아이콘 크기 키우기 */
+	line-height: 50px !important;
+	opacity: 1;
+}
+
+.slick-dots {
+	bottom: 10px;
+}
+
+/* footer */
+.site-footer {
+	background: #f0f0f0; /* 예: 진한 회색 */
+	color: #1e1e1e; /* 텍스트는 밝은 회색 */
+	font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui,
+		Segoe UI, Roboto, Noto Sans KR, Malgun Gothic, sans-serif;
+	box-sizing: border-box;
+	padding: 30px 20px 40px;
+	margin-top: 80px;
+	position: relative;
+}
+
+.footer-inner {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.footer-top {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.footer-links {
+	font-size: 14px;
+}
+
+.footer-links a {
+	color: var(--greyscale-dark-90);
+	text-decoration: none;
+	margin: 0 8px;
+}
+
+.footer-links a:hover {
+	text-decoration: underline;
+}
+
+.footer-info {
+	text-align: center;
+	font-size: 14px;
+	color: var(--greyscale-dark-40);
+}
+
+.footer-info p {
+	margin: 4px 0;
+}
+
+.footer-info img {
+	max-width: 150px;
+	height: auto;
+	margin-bottom: 12px;
+}
+
+.footer-copy {
+	font-size: 14px;
+	color: var(--greyscale-dark-90);
+}
