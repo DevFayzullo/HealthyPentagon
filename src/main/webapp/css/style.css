@@ -149,13 +149,6 @@ body {
 	margin: 0 auto;
 }
 
-.footer-top {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-bottom: 20px;
-}
-
 .footer-links {
 	font-size: 14px;
 }
