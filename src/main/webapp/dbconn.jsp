@@ -8,6 +8,7 @@
     try {
         Class.forName("com.mysql.cj.jdbc.Driver");
         conn = DriverManager.getConnection(url, user, password);
+        application.setAttribute("conn", conn);  // 🔁 MUHIM: conn ni saqlaymiz
     } catch (Exception e) {
         out.println("DB ERROR: " + e.getMessage());
     }
