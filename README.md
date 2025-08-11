@@ -145,7 +145,7 @@ MIT — [LICENSE](./LICENSE) 참고.
 ---
 
 ## 🌍 다른 언어
-- [🇬🇧 English README](./README.md)
+- [🇬🇧 English README](./README.en.md)
 ---
 
 **© 2025 Healthy Food Web — JSP 기반 식품 정보 플랫폼**
