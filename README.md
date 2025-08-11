@@ -1,115 +1,151 @@
-# Healthy Food Web Project 🍱🥗
+# HealthyPentagon
 
-이 프로젝트는 건강한 식단, 믿을 수 있는 식재료, 사용자 리뷰 등을 포함한 웹 기반 식품 정보 플랫폼입니다.
+건강한 식단 추천, 신뢰할 수 있는 식재료, 사용자 리뷰를 제공하는 **웹 기반 식품 정보 플랫폼**입니다.  
+백엔드는 **JSP (Java Server Pages)**, **MySQL**, **Apache Tomcat 9**을 사용하고, 프런트엔드는 **HTML5/CSS3/JavaScript**로 구성되어 있습니다.
+
+> 이 문서는 Tomcat과 MySQL을 이용한 **로컬 개발 환경** 설정 방법과 샘플 DB 스키마를 포함합니다.
 
 ---
 
-## 🛠 기술 스택
+## 🔎 주요 기능
 
-- **Frontend**: HTML5, CSS3, JavaScript
+- **건강 식단** (`diet_management.jsp`): 단백질/저칼로리/저당 탭, MySQL에서 동적 로딩
+- **제품 리뷰** (`review.jsp`): 이미지/리뷰 수가 포함된 카드형 목록
+- **외부 쇼핑몰 배너** (`store.jsp`): 마켓컬리·쿠팡 등 외부 링크
+- **메인 페이지** (`main.jsp`): 배너 및 하이라이트
+
+---
+
+## 🧱 기술 스택
+
+- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
 - **Backend**: JSP (Java Server Pages)
 - **Database**: MySQL
 - **Server**: Apache Tomcat 9.x
 
 ---
 
-## 📁 디렉토리 구조
+## 📂 디렉토리 구조 (주요 경로)
 
 ```
-├── css/
-│   ├── style.css         #천제 스타일
-│   ├── item.css           #아이템 스타일
-├── images/
-│   ├── sides/, desserts/, review/ ... #이미지
-├── views/
-│   ├── banner.jsp             # 배너 페이지
-│   ├── diet_management.jsp    # 식단 관리 페이지
-│   ├── footer.jsp             # 푸터 페이지
-│   ├── header.jsp             # 헤더 페이지
-│   ├── healthy_diet.jsp       # 건강 식단 페이지
-│   ├── main.jsp               # 메인 페이지
-│   ├── review.jsp             # 사용자 리뷰
-│   ├── store.jsp              # 외부 쇼핑몰 배너
-├── dbconn.jsp                 # DB 연결
-├── index.jsp                  # 메인
-
-
+src/main/webapp/
+├─ css/
+│  ├─ style.css
+│  └─ item.css
+├─ images/
+│  ├─ sides/  desserts/  review/  ... 
+├─ views/
+│  ├─ banner.jsp
+│  ├─ diet_management.jsp
+│  ├─ footer.jsp
+│  ├─ header.jsp
+│  ├─ healthy_diet.jsp
+│  ├─ main.jsp
+│  └─ review.jsp
+├─ dbconn.jsp
+└─ index.jsp
 ```
 
 ---
 
-## 📌 주요 기능
+## 🗄️ DB 스키마 (샘플)
 
-### 1. 건강 식단 추천 (`diet_management.jsp`)
-- 단백질, 칼로리, 저당 식단 탭
-- MySQL DB에서 동적으로 데이터 로딩
+### 테이블: `healthy_diets`
+| 필드        | 타입         | 설명                         |
+|-------------|--------------|------------------------------|
+| `id`        | INT PK       | Auto-increment               |
+| `category`  | VARCHAR(20)  | 'protein' / 'calorie' / 'low_sugar' |
+| `name`      | VARCHAR(255) | 식품명                        |
+| `kcal`      | INT          | 칼로리                        |
+| `image_url` | VARCHAR(255) | 이미지 링크                   |
 
-### 2. 제품 리뷰 목록 (`review.jsp`)
-- 사용자 리뷰, 이미지, 리뷰 수 등 표시
-- 정사각형 카드 레이아웃
+```sql
+CREATE TABLE healthy_diets (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  category VARCHAR(20) NOT NULL,
+  name VARCHAR(255) NOT NULL,
+  kcal INT,
+  image_url VARCHAR(255)
+);
+```
 
-### 3. 외부 쇼핑몰 배너 (`store.jsp`)
-- 마켓컬리, 쿠팡 등 외부 링크 배너 삽입
+### 테이블: `reviews`
+| 필드           | 타입          | 설명             |
+|----------------|---------------|------------------|
+| `id`           | INT PK        | Auto-increment   |
+| `title`        | VARCHAR(255)  | 제품명            |
+| `content`      | TEXT          | 리뷰 내용         |
+| `review_count` | INT           | 리뷰 수           |
+| `image_url`    | VARCHAR(255)  | 이미지 링크       |
 
-### 4. 메인 페이지 (`main.jsp`)
-- 추천 반찬 및 디저트 고정 이미지 나열
+```sql
+CREATE TABLE reviews (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  content TEXT,
+  review_count INT DEFAULT 0,
+  image_url VARCHAR(255)
+);
+```
 
----
-
-## 🗃 DB 테이블 요약
-
-### `healthy_diets`
-| 필드 | 설명 |
-|------|------|
-| id | PK |
-| category | '단백질', '칼로리', '저당' |
-| name | 식품 이름 |
-| kcal | 칼로리 |
-| image_url | 이미지 링크 |
-
-### `reviews`
-| 필드 | 설명 |
-|------|------|
-| id | PK |
-| title | 제품명 |
-| content | 리뷰 내용 |
-| review_count | 리뷰 수 |
-| image_url | 이미지 링크 |
-
----
-
-## ▶️ 실행 방법
-
-1. MySQL 데이터베이스 세팅
-   - `healthy_diets` 및 `reviews` 테이블 생성
-   - 테스트용 데이터 삽입
-
-2. Apache Tomcat 실행 후 프로젝트 deploy
-
-3. 브라우저에서 `http://localhost:8080/프로젝트경로/views/main.jsp` 접속
+> 개발용으로 각 테이블에 몇 개의 더미 데이터를 넣어두면 편리합니다.
 
 ---
 
-## 🙋 문의
+## 🧪 로컬 실행
 
-문의 및 피드백: **[DevFayzullo]** ([GitHub](https://github.com/DevFayzullo), fayzullo.coder@gmail.com)
+### 1) 사전 준비
+- **JDK 17** (또는 Tomcat과 호환되는 11+)
+- **Apache Tomcat 9.x**
+- **MySQL 8.x** (또는 5.7+)
+
+### 2) 데이터베이스
+1. DB 생성 (예: `healthy_pentagon`)
+2. 위 **CREATE TABLE** 실행
+3. 샘플 데이터 삽입
+4. `dbconn.jsp`에 접속 정보 업데이트:
+   ```jsp
+   <%
+     String url = "jdbc:mysql://localhost:3306/healthy_pentagon?serverTimezone=UTC&useSSL=false&characterEncoding=utf8";
+     String user = "root";
+     String password = "1234";
+     Class.forName("com.mysql.cj.jdbc.Driver");
+     Connection conn = DriverManager.getConnection(url, user, password);
+   %>
+   ```
+
+### 3) Tomcat으로 실행
+- IDE(Eclipse/IntelliJ)에서 Java Web 프로젝트로 Import
+- **Tomcat 9** 서버 설정
+- 아티팩트/배포 설정 후 실행
+
+### 4) 접속 경로
+- `http://localhost:8080/<context-path>/views/main.jsp`
+  - 또는 `http://localhost:8080/<context-path>/index.jsp`
 
 ---
 
-## 👥 팀원 소개
+## 🧭 로드맵
+- [ ] 리뷰 검색/필터 추가
+- [ ] 식단/리뷰 **관리자 CRUD** 추가
+- [ ] DB 접근 로직을 **DAO**로 분리 및 커넥션 풀 적용
+- [ ] UI 다국어(i18n, KR/EN)
+- [ ] DAO 레이어 단위 테스트
 
-| 이름         | 역할              | GitHub 프로필                          |
-|--------------|-------------------|----------------------------------------|
-| DevFayzullo(줄로)  | 프론드앤드 개발   | [DevFayzullo](https://github.com/DevFayzullo) |
-| 김진성             | 디자이너         | [Zzing279](https://github.com/Zzing279) |
-| Ariel(아리엘)      | 백앤드 개발       | [yxcks1709](https://github.com/yxcks1709) |
+---
+
+## 🤝 기여
+PR 환영합니다. 변경 전 이슈에 제안해 주세요.
 
 ---
 
 ## 📄 라이선스
+MIT — [LICENSE](./LICENSE) 참고.
 
-이 프로젝트는 MIT 라이선스 하에 제공됩니다. 자세한 내용은 [LICENSE](LICENSE) 파일을 참고하세요.
+---
 
+## 🌍 다른 언어
+- [🇬🇧 English README](./README.md)
 ---
 
 **© 2025 Healthy Food Web — JSP 기반 식품 정보 플랫폼**
