@@ -1,0 +1,48 @@
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# IDE specific #
+/.idea/
+/.vscode/
+/eclipse/
+/*.iml
+
+# Maven / Gradle build dirs
+/target/
+/build/
+
+# Tomcat work directory
+/work/
+/temp/
+
+# Database credentials (if in separate file)
+dbconn.jsp
+
+# OS generated files #
+.DS_Store
+Thumbs.db
+
+# Node modules (if using frontend packages)
+node_modules/
+
+# Coverage / reports
+coverage/
+*.lcov
