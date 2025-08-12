@@ -7,6 +7,12 @@ Built with **JSP (Java Server Pages)**, **MySQL**, and **Apache Tomcat 9** on th
 
 ---
 
+## 📸 Preview
+
+![screenshot](./src/main/webapp/images/screenshot.png)
+
+---
+
 ## 🔎 Features
 
 - **Healthy Diets** (`diet_management.jsp`): tabs for protein, low-calorie, and low-sugar; data loaded dynamically from MySQL
@@ -125,11 +131,6 @@ CREATE TABLE reviews (
 
 ---
 
-## 🧰 Scripts (optional)
-If you manage the project with Maven or Gradle, add build/deploy scripts here. (Currently, this project is a JSP webapp without a build tool configured.)
-
----
-
 ## 🧭 Roadmap
 - [ ] Add **search & filter** on reviews
 - [ ] Add **admin CRUD** for diets and reviews
@@ -150,4 +151,4 @@ MIT — see [LICENSE](./LICENSE).
 ---
 
 ## 🌍 Other Languages
-- [🇰🇷 한국어 README](./README.ko.md)
+- [🇰🇷 한국어 README](./README.md)
